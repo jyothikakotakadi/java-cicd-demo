@@ -56,8 +56,8 @@ pipeline {
             steps {
                 echo 'Deploying application to Kubernetes...'
                 sh '''
-                kubectl apply -f k8s/deployment.yaml
-                kubectl apply -f k8s/service.yaml
+                kubectl apply -f deployment.yaml
+                kubectl apply -f service.yaml
 
                 kubectl set image deployment/$K8S_DEPLOYMENT \
                 java-cicd-container=$DOCKERHUB_USERNAME/$IMAGE_NAME:$IMAGE_TAG
